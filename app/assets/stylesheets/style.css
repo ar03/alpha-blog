@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background: #999;
+}
+
+.header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: blue;
+}
+
+.body {
+    height: 800px;
+    width: 100%;
+    background: #ddd;
+}
+
+.profile-image {
+    height: 200px;
+}
