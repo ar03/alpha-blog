@@ -29,10 +29,10 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
     flash[:success] = "Article was successfully updated"
     redirect_to articles_path(@article)
-  else
+    else
     render 'edit'
+    end
   end
-end
 
   def show
   end
@@ -51,7 +51,7 @@ private
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
 
   def require_same_user
