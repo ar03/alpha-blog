@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
+  
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
   end
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Welcome to the alpha blog #{@user.username}"
       redirect_to user_path(@user)
-    else
+      else
       render 'new'
     end
   end
